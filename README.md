@@ -26,9 +26,9 @@ steg_main.py: error: the following arguments are required: --cover, --secret, --
    ```python3 steg_main.py --cover images/train_img.bmp --secret images/water_img.bmp --numbits 4```
 
 #### parameters explanation:
-   ```--cover  a cover photo of file_type bmp```
-   ```--secret  a secret photo file_type bmp```
-   ```--numbits  a number 0-8 for # of LSB bits used in embedding``
+- ```--cover  a cover photo of file_type bmp```
+- ```--secret  a secret photo file_type bmp```
+- ```--numbits  a number 0-8 for # of LSB bits used in embedding```
 
 ### Examples 
 

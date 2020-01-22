@@ -1,7 +1,8 @@
 # Hidden Image Embdedding: #
 Embeds a secret photo in the least signifigant bits (LSB) of a cover photo, it then extracts that image. 
 The point being to to examine changes in hidden image quality upon extraction and the extent to 
-an image is hidden as a factor of the number of LSB bits used, or just to hide images.  
+an image is hidden as a factor of the number of LSB bits used, or simply to just to hide sensitive
+images in a cover image.
 
 Program returns display window with Secret Image embedded in the {num_bits} LSBs 
 of Cover Image as well as a display window Secret Image extracted from the {num_bits} 
@@ -14,7 +15,7 @@ LSBs of Cover Image.
    ```pip install opencv-python```
 
 ### Usage: 
-first cd into  **LSB-steganography/src/**
+first cd into  **steganography/src/**
 
 usage: steg_main.py [-h] --cover [COVER] --secret [SECRET] --numbits [NUMBITS]
 steg_main.py: error: the following arguments are required: --cover, --secret, --numbits
@@ -31,4 +32,4 @@ steg_main.py: error: the following arguments are required: --cover, --secret, --
 
 ### Examples 
 
-See **LSB-steganography/images_out/** to see examples of the embedded and extracted images. 
+See **steganography/images_out/** to see examples of the embedded and extracted images. 

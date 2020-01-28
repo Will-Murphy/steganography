@@ -19,7 +19,7 @@ def embed_LSB (cover_img, secret_img, bits):
          cover_pixel = embedded_img[i,j]
          secret_pixel = secret_copy[i,j]
          embedded_pixel = [] 
-         for k in range(0,3):
+         for k in range(3):
                cover_pixel[k] = cover_pixel[k] & bit_mask 
                secret_pixel[k] = secret_pixel[k]>>(8-bits)
                embedded_pixel.append(cover_pixel[k]|secret_pixel[k])
@@ -38,7 +38,7 @@ def extract_LSB (embedded_img, bits ):
       for j in range(width):
          extracted_pixel = []
          embedded_pixel = embedded_img[i,j]
-         for k in range(0,3):
+         for k in range(3):
                extracted_pixel.append(embedded_pixel[k]<<(8-bits))
          extracted_img[i,j] = extracted_pixel
    return extracted_img

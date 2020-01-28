@@ -1,12 +1,24 @@
 """
-Utilities for preforming LSB Steganography Functionality
+Utility functions for preforming LSB Steganography 
 """
 
-def check_input_args(args):
-   """Check user input w helpers."""
+def check_embed_extract_input_args(args):
+   """Check user embed extract input w helpers."""
+   check_embed_input_args(args)
+
+
+def check_embed_input_args(args):
+   """Check user embed input w helpers."""
    __check_image_type(args['cover']) 
    __check_image_type(args['secret'])
    __check_num_bits(int(args['numbits']))
+
+
+def check_extract_input_args(args):
+   """Check user extract input w helpers."""
+   __check_image_type(args['cover']) 
+   __check_num_bits(int(args['numbits']))
+
 
 def __check_image_type(image_file_path):
     """Check that image is of type .bmp or bit map """ 

@@ -1,13 +1,14 @@
 # Hidden Image Embdedding: #
 
-Program embeds a secret image in specified number of least significant bits (LSB) of a cover image or, conversely, extract a secret image from a specified number LSBs of a cover image with an embedded secret.
+Program embeds a secret image in specified number of least significant bits (LSB) of a cover image or, conversely, extracts a secret image from a specified number LSBs of a cover image with an embedded secret.
 
-By defualt, provided a cover and secret photo, display windows with Secret Image embedded in the {num_bits} LSBs of Cover Image, as well as a display window with Secret Image extracted from the {num_bits} 
-LSBs of Cover Image, is returned. There are also options which will soley return an embedded image from a cover and secret, or an extracted image from a single cover image(see example calls).
+By defualt, provided a cover and secret photo, program will return a display window with a Secret Image embedded in the {num_bits} LSBs of Cover Image, as well as a display window with Secret Image subsequently extracted from the {num_bits} 
+LSBs of Cover Image. There are also options which will soley return an embedded image from a cover and secret, or an extracted image from a single cover image(see example calls).
 
-**Note:** Image type should be of file type .bmp
-**Note:** For image embedding, cover image and secret image must be of same dimensions  
-**Note:** For image extraction, it is best if the number of LSB bits used to extract is the same as the number of LSB bits used to originally embed the secret image. If it is not know try with bits 1-8 and see which produces clearest image. 
+### Notes:
+- Image type should be of file type .bmp
+- For image embedding, cover image and secret image must be of same dimensions  
+-  For image extraction, it is best if the number of LSB bits used to extract is the same as the number of LSB bits used to originally embed the secret image. If it is not know try with bits 1-8 and see which produces clearest image. 
 
 ### Setup: 
 
@@ -16,7 +17,7 @@ LSBs of Cover Image, is returned. There are also options which will soley return
 ### Usage: 
 first cd into  **steganography/src/**
 
-defualt operation is embed and extract (see example calls)
+default operation is embed and extract (see example calls)
    ```
    usage: steg_main.py [-h] --cover [COVER] --secret [SECRET] --numbits [NUMBITS]
                      [--operation [OPERATION]]
@@ -47,7 +48,7 @@ defualt operation is embed and extract (see example calls)
 ##### Produce Extracted Image from one LSB bits of Cover Image
    ```python3 steg_main.py --cover ../images_out/embedded_1.bmp  --numbits 1 --operation EXTRACT```
 
-### Input/OutPut Examples
+### Input/Output Examples
 
 See **steganography/images_out/** to see examples of outputted embedded and extracted images with 1 and 7 LSB bits 
 See **steganography/Images/** to see the example cover and secret images used as input

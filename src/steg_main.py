@@ -19,14 +19,9 @@ def main(args):
      secret_img = cv2.imread(args['secret'])
      assert cover_img is not None and secret_img is not None, \
                'There was a problem reading the image, check file path.'
-
      embedded_img = steg_img.embed_LSB(cover_img, secret_img, num_bits)
      extracted_img = steg_img.extract_LSB(embedded_img, num_bits)
-
-     cv2.imshow(f'Secret Image Embedded in the {num_bits} LSBs of Cover Image',embedded_img)
-     cv2.imshow(f'Secret Image Extracted from the {num_bits} LSBs of Cover Image',extracted_img)
-     cv2.waitKey(0)
-     cv2.destroyAllWindows()
+     utils.display_embedded_extracted_imgs(embedded_img, extracted_img, num_bits)
 
    elif args['operation'] == 'EMBED':
      utils.check_embed_input_args(args)
@@ -35,12 +30,8 @@ def main(args):
      secret_img = cv2.imread(args['secret'])
      assert cover_img is not None and secret_img is not None, \
                'There was a problem reading the image, check file path.'
-
      embedded_img = steg_img.embed_LSB(cover_img, secret_img, num_bits)
-
-     cv2.imshow(f'Secret Image Embedded in the {num_bits} LSBs of Cover Image',embedded_img)
-     cv2.waitKey(0)
-     cv2.destroyAllWindows()
+     utils.display_embedded_img(embedded_img, num_bits)
      
    elif args['operation'] == 'EXTRACT':
      utils.check_extract_input_args(args)
@@ -48,12 +39,8 @@ def main(args):
      cover_img = cv2.imread(args['cover'])
      assert cover_img is not None, \
                'There was a problem reading the image, check file path.'
-
      extracted_img = steg_img.extract_LSB(cover_img, num_bits)
-
-     cv2.imshow(f'Secret Image Extracted from the {num_bits} LSBs of Cover Image',extracted_img)
-     cv2.waitKey(0)
-     cv2.destroyAllWindows()
+     utils.display_extracted_img(extracted_img, num_bits)
 
    else: 
      print("operation argument must be 'EMBED_EXTRACT', 'EMBED' or 'EXTRACT'")
